@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Die Kreativschmiede – Atelier für Trauringe & Goldschmiedekurse</title>
+  <meta name="description" content="Atelier für Trauringe, Anfertigungen und Goldschmiedekurse in Wustrow-Blütlingen. Handwerkliche Qualität ohne Massenware – persönlich, präzise, alltagstauglich." />
+  <link rel="canonical" href="https://desue3103.github.io/ks_relaunch/" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ---- Page-specific ---- */
+
+    /* Hero */
+    .home-hero {
+      padding: 88px 0 70px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+      margin-top: 18px;
+    }
+    .home-hero h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.12;
+      margin-bottom: 14px;
+    }
+    .home-hero p.intro {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0 0 22px;
+      max-width: 560px;
+    }
+    .hero-media {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      min-height: 420px;
+      background: var(--accent-soft);
+    }
+    .hero-media img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* Offers carousel */
+    .offers { background: var(--surface-2); }
+
+    .offers-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+    .offers-head h2 { font-size: 38px; line-height: 1.12; }
+    .offers-head p  { max-width: 560px; margin: 10px 0 0; color: var(--muted); }
+
+    .offers-nav { display: flex; gap: 10px; align-items: center; }
+
+    .icon-btn {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.7);
+      cursor: pointer; transition: 0.2s;
+      font-size: 18px; line-height: 1;
+    }
+    .icon-btn:hover {
+      background: rgba(255,255,255,0.95);
+      border-color: rgba(28,28,28,0.22);
+      transform: translateY(-1px);
+    }
+
+    .offers-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(280px, 340px);
+      gap: 18px;
+      overflow-x: auto;
+      padding: 10px 6px 18px;
+      margin: 0 -6px;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .offers-track::-webkit-scrollbar { height: 8px; }
+    .offers-track::-webkit-scrollbar-thumb { background: rgba(28,28,28,0.14); border-radius: 999px; }
+    .offers-track::-webkit-scrollbar-track { background: transparent; }
+
+    .offer-card {
+      scroll-snap-align: start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .offer-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+      border-color: rgba(182,162,106,0.55);
+    }
+    .offer-kicker {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .offer-card h3 { font-size: 22px; margin-top: 2px; }
+    .offer-card > p { color: var(--muted); margin: 0; font-size: 14px; }
+
+    .offer-bullets {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .offer-bullets li { margin: 8px 0; }
+
+    .offer-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Highlight split */
+    .highlight-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+      margin-top: 54px;
+    }
+    .highlight-split .media { min-height: 420px; }
+
+    @media (max-width: 900px) {
+      .hero-grid     { grid-template-columns: 1fr; }
+      .offers-head   { flex-direction: column; align-items: flex-start; }
+      .offers-head h2 { font-size: 30px; }
+      .highlight-split { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .home-hero { padding: 60px 0 50px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="Startseite">
+        <span>DIE KREATIVSCHMIEDE</span>
+      </a>
+      <div class="menu">
+        <a href="index.html" class="active">Start</a>
+        <a href="trauringe.html">Trauringe</a>
+        <a href="atelier.html">Atelier</a>
+        <a href="preise.html">Preise</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="cta-group">
+        <a href="kontakt.html#termin" class="btn btn-primary btn-sm">TERMIN ANFRAGEN</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="home-hero" id="top">
+    <div class="wrap">
+      <span class="kicker">Atelier für Goldschmiedekunst · Wustrow-Blütlingen</span>
+      <div class="hero-grid">
+        <div>
+          <h1>Handwerk, das man spürt.</h1>
+          <p class="intro">Trauringe, Anfertigungen und Kurse – alles entsteht in unserer Werkstatt. Ohne Massenware, ohne Abkürzungen. Dafür mit Ruhe, Präzision und Alltagstauglichkeit.</p>
+
+          <div class="cta-group" style="justify-content:flex-start;">
+            <a href="trauringe.html" class="btn btn-primary">Zu den Trauringen</a>
+            <a href="kontakt.html#termin" class="btn btn-outline">Termin anfragen</a>
+          </div>
+
+          <div class="micro-proof" aria-label="Vertrauenssignale">
+            <span class="micro-pill"><span class="dot"></span>Werkstatt statt Showroom</span>
+            <span class="micro-pill"><span class="dot"></span>3 Generationen Handwerk</span>
+            <span class="micro-pill"><span class="dot"></span>Qualität für den Alltag</span>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="images/atelier_uebermich.jpg" alt="Katja Süzer in der Goldschmiedewerkstatt der Kreativschmiede" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ANGEBOTE CAROUSEL -->
+  <section class="offers" id="angebote">
+    <div class="wrap">
+      <div class="offers-head">
+        <div>
+          <span class="kicker">Angebote</span>
+          <h2>Wofür ihr zu uns kommt</h2>
+          <p>Wählt den Einstieg, der zu euch passt – von Trauringen bis zum Kurs im Atelier.</p>
+        </div>
+        <div class="offers-nav">
+          <button class="icon-btn" data-offers-prev aria-label="Zurück">‹</button>
+          <button class="icon-btn" data-offers-next aria-label="Weiter">›</button>
+        </div>
+      </div>
+
+      <div class="offers-track" id="offersTrack" tabindex="0">
+
+        <article class="offer-card">
+          <div class="offer-kicker">Trauringe</div>
+          <h3>Trauringe anfertigen lassen</h3>
+          <p>Entwurf & Beratung statt Verkauf. Wir entwickeln Form, Profil und Material passend zu euren Händen.</p>
+          <ul class="offer-bullets">
+            <li>Individuell & alltagstauglich</li>
+            <li>Planbarer Prozess, klare Preise</li>
+          </ul>
+          <div class="offer-actions">
+            <a class="btn btn-primary" href="trauringe.html">Trauring-Seite</a>
+            <a class="btn btn-outline" href="kontakt.html#termin">Beratung</a>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <div class="offer-kicker">Trauringe</div>
+          <h3>Trauringe selbst schmieden</h3>
+          <p>Ein Tag in der Werkstatt: ihr schmiedet die Ringe selbst – begleitet, sicher, mit professionellem Finish.</p>
+          <ul class="offer-bullets">
+            <li>Keine Vorkenntnisse nötig</li>
+            <li>Erlebnis + sauberes Ergebnis</li>
+          </ul>
+          <div class="offer-actions">
+            <a class="btn btn-primary" href="trauringe.html#selbst-schmieden">Ablauf</a>
+            <a class="btn btn-outline" href="kontakt.html#termin">Vorgespräch</a>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <div class="offer-kicker">Schmuck</div>
+          <h3>Individuelle Anfertigungen</h3>
+          <p>Schmuckstücke nach euren Vorstellungen – mit ehrlicher Beratung zu Machbarkeit und Budget.</p>
+          <ul class="offer-bullets">
+            <li>Design gemeinsam entwickeln</li>
+            <li>Material & Details transparent</li>
+          </ul>
+          <div class="offer-actions">
+            <a class="btn btn-primary" href="kontakt.html#termin">Anfrage</a>
+            <a class="btn btn-outline" href="atelier.html">Atelier</a>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <div class="offer-kicker">Kurse</div>
+          <h3>Goldschmiedekurse</h3>
+          <p>Kreativzeit im Atelier: ein eigenes Stück gestalten – strukturiert, begleitet, mit Ergebnis zum Mitnehmen.</p>
+          <ul class="offer-bullets">
+            <li>Ideal als Geschenk</li>
+            <li>Für Einsteiger geeignet</li>
+          </ul>
+          <div class="offer-actions">
+            <a class="btn btn-primary" href="kontakt.html#termin">Kurs anfragen</a>
+            <a class="btn btn-outline" href="atelier.html#kurse">Details</a>
+          </div>
+        </article>
+
+        <article class="offer-card">
+          <div class="offer-kicker">Service</div>
+          <h3>Reparaturen & Anpassungen</h3>
+          <p>Ring zu eng, Kette gerissen, Stein locker? Wir prüfen, erklären Optionen und setzen fachgerecht um.</p>
+          <ul class="offer-bullets">
+            <li>Klare Einschätzung vorab</li>
+            <li>Saubere Ausführung</li>
+          </ul>
+          <div class="offer-actions">
+            <a class="btn btn-primary" href="kontakt.html#termin">Anfrage</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HANDWERK / TRUST -->
+  <section id="handwerk">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Handwerk</span>
+        <h2>Warum Kreativschmiede statt von der Stange?</h2>
+        <p class="lead">Weil Details zählen: Material, Tragekomfort, Verarbeitung – und ein Prozess, der nicht unter Zeitdruck steht.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Echtes Edelmetall</h3>
+          <p>Massiv statt beschichtet. Saubere Kanten, klare Profile – gemacht für täglichen Gebrauch. Gold in allen Farben, Platin und Palladium.</p>
+        </div>
+        <div class="card">
+          <h3>Beratung mit Substanz</h3>
+          <p>Wir sprechen über Hände, Alltag, Budget und Machbarkeit – bevor irgendetwas entschieden wird. Kein Verkaufsdruck.</p>
+        </div>
+        <div class="card">
+          <h3>Drei Generationen Erfahrung</h3>
+          <p>Gegründet von Hans Schlachter, weitergeführt von Astrid und Bernd – jetzt in den Händen von Katja Süzer. Handwerk ohne Abkürzungen.</p>
+        </div>
+      </div>
+
+      <div class="highlight-split">
+        <div class="media">
+          <img src="images/workshop-hands.jpg" alt="Goldschmiedearbeit – Hände bei der Arbeit" loading="lazy" />
+        </div>
+        <div>
+          <span class="kicker">Fokus</span>
+          <h2 style="font-size: 40px; line-height: 1.12; margin-top: 6px;">Schön – aber vor allem tragbar.</h2>
+          <p style="color: var(--muted); margin-top: 12px; margin-bottom: 20px;">
+            Schmuck muss im Alltag funktionieren. Deshalb achten wir auf Kanten, Profile, Passform und Oberflächen, die nicht nach drei Monaten „durch" sind.
+          </p>
+          <div class="cta-group" style="justify-content:flex-start;">
+            <a href="kontakt.html#termin" class="btn btn-primary">Beratung anfragen</a>
+            <a href="trauringe.html" class="btn btn-outline">Trauringe ansehen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATELIER KURZVORSCHAU -->
+  <section id="atelier" style="background: var(--surface-2);">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Das Atelier</span>
+        <h2>Hier entsteht alles.</h2>
+        <p class="lead">Beratung, Entwurf und Fertigung an einem Ort. Keine Show – echte Werkstatt in Wustrow-Blütlingen.</p>
+      </div>
+
+      <div class="split">
+        <div>
+          <h3 style="font-size: 28px; margin-bottom: 10px;">Was euch erwartet</h3>
+          <p style="color: var(--muted); margin: 0 0 20px;">
+            Katja Süzer, dritte Generation der Familie Schlachter, führt das Atelier seit Juli 2025. Eine ruhige Atmosphäre, klare Abläufe und ehrliche Antworten.
+          </p>
+          <a href="atelier.html" class="btn btn-outline">Mehr über das Atelier</a>
+        </div>
+
+        <div class="media">
+          <img src="images/EG_01956.jpeg" alt="Familie Schlachter – drei Generationen in der Werkstatt" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Ablauf</span>
+        <h2>So kommt ihr zum Ergebnis</h2>
+        <p class="lead">Kurzer, klarer Prozess – ohne unnötige Schleifen.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Anfrage</h3>
+          <p>Ihr sagt, worum es geht: Trauringe, Kurs, Anfertigung oder Reparatur.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Klärung</h3>
+          <p>Material, Timing, Budget, Machbarkeit. Transparent und pragmatisch.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Umsetzung</h3>
+          <p>Fertigung oder Kurs – sauber, ruhig, mit Qualitätskontrolle.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Übergabe</h3>
+          <p>Finaler Check. Hinweise zu Pflege und späteren Anpassungen.</p>
+        </div>
+      </div>
+
+      <div class="center" style="margin-top: 34px;">
+        <a href="kontakt.html#termin" class="btn btn-primary">Termin anfragen</a>
+        <a href="trauringe.html" class="btn btn-outline" style="margin-left: 10px;">Trauringe im Detail</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STIMMEN -->
+  <section id="stimmen" style="background: var(--surface-2);">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Stimmen</span>
+        <h2>Was Kund:innen sagen</h2>
+      </div>
+      <div class="quotes">
+        <div class="quote">
+          <p>„Sehr ruhig, sehr professionell – und am Ende Ringe, die sich sofort richtig angefühlt haben."</p>
+          <div class="who">– Paar, Trauringe</div>
+        </div>
+        <div class="quote">
+          <p>„Der Kurs war strukturiert, nicht kitschig. Man merkt: Hier wird wirklich gearbeitet."</p>
+          <div class="who">– Kundin, Goldschmiedekurs</div>
+        </div>
+        <div class="quote">
+          <p>„Transparente Beratung, keine Verkaufsshow. Genau das wollten wir."</p>
+          <div class="who">– Paar, Beratung</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">FAQ</span>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="faq-container">
+        <details>
+          <summary>Macht ihr auch „nur" Reparaturen?</summary>
+          <p>Ja. Wir prüfen den Zustand, erklären Optionen und sagen ehrlich, was sinnvoll ist.</p>
+        </details>
+        <details>
+          <summary>Kann ich ohne Vorkenntnisse einen Kurs machen?</summary>
+          <p>Ja. Der Kurs ist so aufgebaut, dass Einsteiger sicher zum Ergebnis kommen. Astrid und Bernd Schlachter begleiten euch Schritt für Schritt.</p>
+        </details>
+        <details>
+          <summary>Wie läuft ein Trauring-Prozess ab?</summary>
+          <p>Für Trauringe haben wir eine eigene Seite – dort findet ihr die zwei Wege (Anfertigung oder selbst schmieden) inkl. Ablauf und Preisen.</p>
+        </details>
+        <details>
+          <summary>Welche Materialien verwendet ihr?</summary>
+          <p>Gold (Gelb-, Weiß-, Roségold) in 333er, 585er und 750er, Platin und Palladium – massiv, keine Beschichtungen.</p>
+        </details>
+        <details>
+          <summary>Wie bekomme ich einen Preisrahmen?</summary>
+          <p>Nach einem kurzen Gespräch zu Material, Breite und Aufwand. Wir geben einen klaren Rahmen, bevor es konkret wird. Alle Preise auch auf unserer Preisseite.</p>
+        </details>
+        <details>
+          <summary>Kann ich eigenes Altgold mitbringen?</summary>
+          <p>Ja. Wir rechnen euer Altgold zum fairen Tagespreis an und können es für eure neuen Ringe verwenden.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA KONTAKT -->
+  <section id="termin" style="background: var(--surface-2);">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Nächster Schritt</span>
+        <h2>Termin anfragen</h2>
+        <p class="lead">Kurze Nachricht genügt – wir melden uns mit passenden Vorschlägen.</p>
+      </div>
+
+      <div style="max-width: 680px; margin: 44px auto 0; background: var(--surface); padding: 44px; border-radius: var(--radius); border: 1px solid var(--line); text-align: center;">
+        <p style="color: var(--muted); margin-bottom: 20px;">
+          E-Mail: <a href="mailto:info@die-kreativ-schmiede.de" style="color: var(--text); font-weight: 600;">info@die-kreativ-schmiede.de</a><br>
+          Telefon: <a href="tel:+4958439866000" style="color: var(--text); font-weight: 600;">05843 – 9 86 60 00</a><br>
+          WhatsApp: <a href="https://wa.me/491711660675" style="color: var(--text); font-weight: 600;">0171 – 1 66 06 75</a>
+        </p>
+        <div class="cta-group">
+          <a href="kontakt.html#termin" class="btn btn-primary">Zur Kontaktseite</a>
+          <a href="trauringe.html" class="btn btn-outline">Trauringe ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2025 Die Kreativschmiede · Dorfstraße 5, 29462 Wustrow-Blütlingen ·
+        <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const track = document.getElementById('offersTrack');
+      if (!track) return;
+      const next = document.querySelector('[data-offers-next]');
+      const prev = document.querySelector('[data-offers-prev]');
+      const scrollByCard = (dir) => {
+        const card = track.querySelector('.offer-card');
+        const step = card ? card.getBoundingClientRect().width + 18 : 320;
+        track.scrollBy({ left: dir * step, behavior: 'smooth' });
+      };
+      if (next) next.addEventListener('click', () => scrollByCard(1));
+      if (prev) prev.addEventListener('click', () => scrollByCard(-1));
+    })();
+  </script>
+
+</body>
+</html>

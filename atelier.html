@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atelier & Über uns – Die Kreativschmiede</title>
+  <meta name="description" content="Werkstatt statt Showroom. Drei Generationen Goldschmiedehandwerk – jetzt geführt von Katja Süzer in Wustrow-Blütlingen." />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ---- Page-specific ---- */
+
+    .about-hero {
+      padding: 80px 0 70px;
+    }
+    .about-hero h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.12;
+      margin-bottom: 36px;
+      max-width: 700px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0 0 18px;
+    }
+    .about-copy strong { color: var(--text); font-weight: 600; }
+
+    .principles {
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      margin-top: 28px;
+    }
+    .principles ul { margin: 10px 0 0; padding-left: 20px; }
+    .principles li {
+      margin: 10px 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .principles li strong { color: var(--text); }
+
+    .about-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 110px;
+    }
+    .about-photo img { width: 100%; height: auto; display: block; object-fit: cover; }
+    .about-photo figcaption {
+      padding: 14px 18px;
+      background: var(--surface-2);
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Generation cards */
+    .gen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 44px;
+    }
+
+    /* Roles */
+    .roles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      margin-top: 44px;
+    }
+    .role-card {
+      background: var(--surface);
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+    .role-card h3 { font-size: 22px; margin-bottom: 12px; }
+    .role-card p  { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0 0 12px; }
+    .role-card p:last-child { margin: 0; }
+
+    /* Kurs box */
+    .kurs-box {
+      max-width: 800px;
+      margin: 36px auto 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 44px;
+      text-align: center;
+    }
+    .kurs-box h3 { font-size: 24px; margin-bottom: 14px; }
+    .kurs-box p  { color: var(--muted); margin: 0 0 28px; }
+
+    @media (max-width: 900px) {
+      .about-grid   { grid-template-columns: 1fr; gap: 36px; }
+      .about-photo  { position: relative; top: 0; order: -1; }
+      .gen-grid     { grid-template-columns: 1fr; }
+      .roles-grid   { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="Startseite">
+        <span>DIE KREATIVSCHMIEDE</span>
+      </a>
+      <div class="menu">
+        <a href="index.html">Start</a>
+        <a href="trauringe.html">Trauringe</a>
+        <a href="atelier.html" class="active">Atelier</a>
+        <a href="preise.html">Preise</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="cta-group">
+        <a href="kontakt.html#termin" class="btn btn-primary btn-sm">TERMIN ANFRAGEN</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / ÜBER KATJA -->
+  <header class="about-hero" id="top">
+    <div class="wrap">
+      <span class="kicker">Atelier</span>
+      <h1>Werkstatt statt Showroom.</h1>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            Ich bin Katja und seit Juli 2025 führe ich Die Kreativschmiede – den Familienbetrieb, den mein Großvater gegründet und meine Eltern über vier Jahrzehnte geführt haben.
+          </p>
+          <p>
+            Nach meinem BWL-Studium in Groningen und zehn Jahren in anderen Berufen bin ich zurückgekehrt zu dem, was mich schon als Kind fasziniert hat: die Goldschmiede. Als letzte Auszubildende meines Vaters habe ich das Handwerk von Grund auf gelernt.
+          </p>
+          <p>
+            Mein Anspruch: <strong>Beratung ohne Verkaufsdruck, Handwerk ohne Kompromisse, Ringe für den Alltag statt für den Moment.</strong>
+          </p>
+
+          <div class="principles">
+            <span class="kicker" style="font-size:10px;">Warum hier</span>
+            <ul>
+              <li><strong>Drei Generationen Erfahrung</strong> – ohne veraltete Ansätze.</li>
+              <li><strong>Kein Verkaufsdruck</strong> – der Prozess zählt, nicht der Abschluss.</li>
+              <li><strong>BWL-Kopf + Handwerker-Hände</strong> – ihr bekommt beides.</li>
+            </ul>
+          </div>
+
+          <div class="cta-group" style="justify-content:flex-start; margin-top: 24px;">
+            <a href="kontakt.html#termin" class="btn btn-primary">Vorgespräch buchen</a>
+            <a href="trauringe.html" class="btn btn-outline">Zu den Trauringen</a>
+          </div>
+        </div>
+
+        <figure class="about-photo">
+          <img src="images/EG_01991 Kopie.jpeg" alt="Katja Süzer an ihrem Arbeitsplatz in der Goldschmiedewerkstatt" loading="eager" />
+          <figcaption>Katja – dritte Generation, neuer Blick.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- DREI GENERATIONEN -->
+  <section style="background: var(--surface);">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Die Geschichte</span>
+        <h2>Drei Generationen, eine Linie</h2>
+        <p class="lead">Von meinem Großvater über meine Eltern bis zu mir – was sich verändert hat und was bleibt.</p>
+      </div>
+
+      <div class="gen-grid">
+        <div class="card">
+          <h3>1. Generation</h3>
+          <p><strong>Hans Schlachter</strong><br>Gründete die Goldschmiede Schlachter und legte das handwerkliche Fundament, auf dem alles aufbaut.</p>
+        </div>
+        <div class="card">
+          <h3>2. Generation</h3>
+          <p><strong>Astrid & Bernd Schlachter</strong><br>Übernahmen 1984, führten die Goldschmiede in Lüchow und entschieden sich 2013 für die reine Werkstatt in Blütlingen.</p>
+        </div>
+        <div class="card">
+          <h3>3. Generation</h3>
+          <p><strong>Katja Süzer</strong><br>Übernahm Juli 2025 mit dem Ziel: Qualität bewahren, Prozesse verbessern, Beratung neu denken.</p>
+        </div>
+      </div>
+
+      <div style="max-width: 800px; margin: 54px auto 0;">
+        <h3 style="font-size: 28px; margin-bottom: 16px; text-align: center;">2013: Der Umzug nach Blütlingen</h3>
+        <p style="color: var(--muted); line-height: 1.8; margin: 0 0 16px;">
+          Als meine Eltern das Ladengeschäft in Lüchow aufgaben und dieses Atelier bauten, war das eine bewusste Entscheidung: Weg von Laufkundschaft und Schaufenster-Druck, hin zu konzentriertem Arbeiten und echter Beratung.
+        </p>
+        <p style="color: var(--muted); line-height: 1.8; margin: 0;">
+          Hier entstanden mehrere Arbeitsplätze, ruhige Beratungsräume und ein Garten – ein Ort, an dem Trauringe Zeit zum Entstehen bekommen. Diese Ruhe und dieser Anspruch bleiben.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WER MACHT WAS -->
+  <section style="background: var(--surface-2);">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Heute</span>
+        <h2>Wer macht was</h2>
+        <p class="lead">Katja führt, Astrid und Bernd bleiben aktiv – jeder mit seiner Rolle.</p>
+      </div>
+
+      <figure style="max-width: 900px; margin: 44px auto 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow);">
+        <img src="images/EG_01956.jpeg" alt="Familie Schlachter: Astrid, Katja und Bernd in der Werkstatt" loading="lazy" style="width:100%; display:block; object-fit:cover;" />
+        <figcaption style="padding: 14px 18px; background: var(--surface-2); font-size: 13px; color: var(--muted); font-style: italic;">Drei Generationen, eine Werkstatt: Astrid, Katja und Bernd Schlachter.</figcaption>
+      </figure>
+
+      <div class="roles-grid">
+        <div class="role-card">
+          <h3>Katja: Trauringe & Schmuck</h3>
+          <p>Ich bin für alle Trauringe und individuellen Schmuckanfertigungen zuständig. Von der Beratung über die Fertigung bis zur Übergabe – ihr habt es mit mir zu tun.</p>
+          <p><strong>Was ich mitbringe:</strong> BWL-Denken trifft auf Goldschmiede-Handwerk. Strukturierte Prozesse, klare Kommunikation, saubere Arbeit.</p>
+        </div>
+        <div class="role-card">
+          <h3>Astrid & Bernd: Kurse & Expertise</h3>
+          <p>Meine Eltern haben den Betrieb nicht einfach übergeben. Sie leiten die Goldschmiedekurse, beraten bei komplexen Projekten und sind im Hintergrund da, wenn ihre jahrzehntelange Erfahrung gefragt ist.</p>
+          <p><strong>Was bleibt:</strong> Über 40 Jahre Wissen, das nicht verschwindet – sondern weitergegeben wird.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOLDSCHMIEDEKURSE -->
+  <section id="kurse">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">Goldschmiedekurse</span>
+        <h2>Gestaltet euren eigenen Schmuck</h2>
+        <p class="lead">Unter Anleitung von Astrid und Bernd könnt ihr in unserer Werkstatt euer eigenes Schmuckstück erschaffen – Ring, Anhänger, Armband oder was immer ihr im Kopf habt.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Für wen?</h3>
+          <p>Alle ab 15 Jahren – egal ob Anfänger oder mit Vorkenntnissen. Ihr braucht nur Lust aufs Handwerk und eine Idee (oder wir entwickeln eine gemeinsam).</p>
+        </div>
+        <div class="card">
+          <h3>Was entsteht?</h3>
+          <p>Ringe, Anhänger, Armbänder, Ohrringe – jede Art von Schmuck ist möglich. Ihr arbeitet mit echten Materialien (Silber, Gold) und echten Werkzeugen.</p>
+        </div>
+        <div class="card">
+          <h3>Wie läuft's ab?</h3>
+          <p>Ca. 4 Stunden in der Werkstatt, maximal 4 Teilnehmer. Astrid und Bernd begleiten euch Schritt für Schritt – von der Idee bis zum fertigen Stück.</p>
+        </div>
+      </div>
+
+      <div class="kurs-box">
+        <h3>Interessiert?</h3>
+        <p>Die Kurse finden nach Vereinbarung statt. Kontaktiert uns für einen Termin und weitere Details zu Material, Ablauf und Preisen.</p>
+        <a href="kontakt.html#termin" class="btn btn-primary">Kursanfrage stellen</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2025 Die Kreativschmiede · Dorfstraße 5, 29462 Wustrow-Blütlingen ·
+        <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
