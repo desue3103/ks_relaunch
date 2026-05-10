@@ -3,8 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trauringe – Die Kreativschmiede</title>
-  <meta name="description" content="Trauringe anfertigen lassen oder selbst schmieden – zwei Wege, ein Versprechen: Werkstattqualität ohne Massenware. Atelier in Wustrow-Blütlingen." />
+  <title>Trauringe anfertigen oder selbst schmieden | Die Kreativschmiede</title>
+  <meta name="description" content="Trauringe anfertigen lassen ab 350 € oder selbst schmieden ab 700 € – Werkstattqualität aus Wustrow-Blütlingen. Kein Verkaufsdruck, echtes Handwerk seit 3 Generationen." />
+  <link rel="canonical" href="https://www.die-kreativ-schmiede.de/trauringe.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.die-kreativ-schmiede.de/trauringe.html" />
+  <meta property="og:title" content="Trauringe – Die Kreativschmiede Wustrow-Blütlingen" />
+  <meta property="og:description" content="Zwei Wege zum Trauring: anfertigen lassen oder selbst schmieden. Werkstattqualität ohne Massenware." />
+  <meta property="og:image" content="https://www.die-kreativ-schmiede.de/images/workshop-hands.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Die Kreativschmiede" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured Data: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Trauringe – Die Kreativschmiede",
+    "provider": {
+      "@type": "JewelryStore",
+      "name": "Die Kreativschmiede",
+      "url": "https://www.die-kreativ-schmiede.de"
+    },
+    "description": "Trauringe anfertigen lassen oder selbst schmieden. Zwei Wege, ein Versprechen: Werkstattqualität ohne Massenware.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Trauringe anfertigen lassen",
+        "price": "350",
+        "priceCurrency": "EUR",
+        "description": "Meisterlich angefertigte Trauringe – ab 350 € pro Paar in Silber."
+      },
+      {
+        "@type": "Offer",
+        "name": "Trauringe selbst schmieden",
+        "price": "700",
+        "priceCurrency": "EUR",
+        "description": "Trauringe selbst schmieden mit professioneller Begleitung – ab 700 € pro Paar in Silber."
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
@@ -132,7 +178,7 @@
       padding: 20px;
       text-align: center;
     }
-    .material-card .icon { font-size: 28px; margin-bottom: 8px; }
+    .material-card .icon { margin-bottom: 8px; display: flex; justify-content: center; }
     .material-card h4 { font-size: 17px; margin-bottom: 4px; }
     .material-card p { color: var(--muted); font-size: 13px; margin: 0; }
 
@@ -319,13 +365,13 @@
 
       <div class="gallery-row">
         <div class="gallery-item">
-          <img src="images/workshop-detail.jpg" alt="Werkzeug in der Goldschmiedewerkstatt" loading="lazy" />
+          <img src="images/workshop-detail.jpg" alt="Werkzeug in der Goldschmiedewerkstatt der Kreativschmiede" width="3600" height="2369" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="images/workshop-hands.jpg" alt="Hände beim Goldschmieden" loading="lazy" />
+          <img src="images/workshop-hands.jpg" alt="Hände beim Goldschmieden – Selbst-Schmieden-Erlebnis" width="3600" height="2400" loading="lazy" />
         </div>
         <div class="gallery-item">
-          <img src="images/EG_02512.jpeg" alt="Arbeit in der Kreativschmiede" loading="lazy" />
+          <img src="images/EG_02512.jpeg" alt="Handarbeit in der Kreativschmiede Wustrow-Blütlingen" width="2400" height="3600" loading="lazy" />
         </div>
       </div>
 
@@ -370,27 +416,37 @@
 
       <div class="materials">
         <div class="material-card">
-          <div class="icon">🟡</div>
+          <div class="icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#C9A84C" opacity="0.9"/><circle cx="16" cy="16" r="10" fill="#E4C060" opacity="0.5"/></svg>
+          </div>
           <h4>Gelbgold</h4>
           <p>333er / 585er / 750er<br>Der zeitlose Klassiker</p>
         </div>
         <div class="material-card">
-          <div class="icon">⚪</div>
+          <div class="icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#D8D8D8" stroke="#B0B0B0" stroke-width="1"/><circle cx="16" cy="16" r="9" fill="#EFEFEF" opacity="0.7"/></svg>
+          </div>
           <h4>Weißgold</h4>
           <p>585er<br>Modern & elegant</p>
         </div>
         <div class="material-card">
-          <div class="icon">🌸</div>
+          <div class="icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#C98070" opacity="0.9"/><circle cx="16" cy="16" r="9" fill="#DDA090" opacity="0.5"/></svg>
+          </div>
           <h4>Roségold</h4>
           <p>585er<br>Warm & romantisch</p>
         </div>
         <div class="material-card">
-          <div class="icon">⬜</div>
+          <div class="icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#A8A8B8" opacity="0.9"/><circle cx="16" cy="16" r="9" fill="#C8C8D8" opacity="0.6"/></svg>
+          </div>
           <h4>Platin</h4>
           <p>950er<br>Dauerhaft & edel</p>
         </div>
         <div class="material-card">
-          <div class="icon">🩶</div>
+          <div class="icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#9090A0" opacity="0.8"/><circle cx="16" cy="16" r="9" fill="#ADADBD" opacity="0.5"/></svg>
+          </div>
           <h4>Silber</h4>
           <p>925er Sterling<br>Zum Üben & Erleben</p>
         </div>

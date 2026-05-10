@@ -359,6 +359,16 @@ footer {
 footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: var(--text); }
 
+/* ---------- Focus Visible ---------- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.btn:focus-visible { outline-offset: 4px; }
+summary:focus-visible { outline-offset: 2px; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .split { grid-template-columns: 1fr; }
@@ -375,4 +385,15 @@ footer a:hover { color: var(--text); }
   .menu { gap: 2px; }
   section { padding: 70px 0; }
   .grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  body { scroll-behavior: auto; }
 }

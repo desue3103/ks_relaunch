@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.die-kreativ-schmiede.de/sitemap.xml

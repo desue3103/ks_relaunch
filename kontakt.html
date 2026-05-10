@@ -3,8 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kontakt & Anfahrt – Die Kreativschmiede</title>
-  <meta name="description" content="Besucht uns in Wustrow-Blütlingen. Atelierzeiten: Do & Fr 09:30–17:00 Uhr, weitere Termine nach Vereinbarung." />
+  <title>Termin & Kontakt | Die Kreativschmiede Wustrow-Blütlingen</title>
+  <meta name="description" content="Termin buchen oder Kontakt aufnehmen: Die Kreativschmiede, Dorfstraße 5, 29462 Wustrow-Blütlingen. Do & Fr 09:30–17:00, weitere Termine nach Vereinbarung." />
+  <link rel="canonical" href="https://www.die-kreativ-schmiede.de/kontakt.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.die-kreativ-schmiede.de/kontakt.html" />
+  <meta property="og:title" content="Kontakt & Termin | Die Kreativschmiede" />
+  <meta property="og:description" content="Termin online buchen oder uns anrufen: Dorfstraße 5, 29462 Wustrow-Blütlingen. Atelierzeiten Do & Fr 09:30–17:00 Uhr." />
+  <meta property="og:image" content="https://www.die-kreativ-schmiede.de/images/atelier_uebermich.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Die Kreativschmiede" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured Data: LocalBusiness mit Kontaktdaten -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "Die Kreativschmiede",
+    "description": "Goldschmiedeatelter für Trauringe, individuelle Anfertigungen und Goldschmiedekurse in Wustrow-Blütlingen.",
+    "url": "https://www.die-kreativ-schmiede.de",
+    "telephone": ["+4958439866000", "+491711660675"],
+    "email": "info@die-kreativ-schmiede.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dorfstraße 5",
+      "addressLocality": "Wustrow",
+      "addressRegion": "Niedersachsen",
+      "postalCode": "29462",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.9176,
+      "longitude": 11.1205
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Thursday", "Friday"],
+        "opens": "09:30",
+        "closes": "17:00"
+      }
+    ],
+    "priceRange": "€€"
+  }
+  </script>
+
   <link rel="stylesheet" href="css/style.css" />
   <style>
     /* ─── Page Layout ─── */
@@ -185,14 +235,22 @@
       container.appendChild(row);
     });
 
-    // Zeeg Script dynamisch laden
-    (function () {
-      const s = document.createElement('script');
+    // Zeeg Script dynamisch laden – nach vollständigem Seitenaufbau
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
       s.src = 'https://assets.zeeg.me/embed.min.js';
       s.setAttribute('data-user', 'die-kreativ-schmiede');
       s.async = true;
+      // Fallback: Link anzeigen wenn Widget nach 6s nicht geladen ist
+      var timeout = setTimeout(function () {
+        var el = document.getElementById('zeeg-embed-die-kreativ-schmiede');
+        if (el && el.offsetHeight < 50) {
+          el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:200px;flex-direction:column;gap:14px;color:var(--muted);font-size:15px;"><p>Terminbuchung direkt per:</p><a href="mailto:info@die-kreativ-schmiede.de" class="btn btn-primary">E-Mail schreiben</a><a href="tel:+4958439866000" class="btn btn-outline" style="margin-top:4px;">05843 – 9 86 60 00</a></div>';
+        }
+      }, 6000);
+      s.onload = function () { clearTimeout(timeout); };
       document.body.appendChild(s);
-    })();
+    });
   </script>
 </body>
 </html>
