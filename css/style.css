@@ -94,16 +94,23 @@ section {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
   color: var(--text);
   min-width: 220px;
   flex-shrink: 0;
 }
 
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
 .brand span {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.02em;
 }
 

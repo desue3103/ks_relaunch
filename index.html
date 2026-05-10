@@ -69,9 +69,9 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 34px;
-      align-items: center;
+      align-items: start;
       margin-top: 18px;
     }
     .home-hero h1 {
@@ -90,12 +90,17 @@
       overflow: hidden;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      min-height: 420px;
       background: var(--accent-soft);
+      /* Aspect ratio passend zum Hochformat-Bild (1329×2477 ≈ 8:15) */
+      aspect-ratio: 4 / 6;
+      max-height: 600px;
     }
     .hero-media img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 8%;
+      display: block;
     }
 
     /* Offers carousel */
@@ -197,12 +202,14 @@
 
     @media (max-width: 900px) {
       .hero-grid     { grid-template-columns: 1fr; }
+      .hero-media    { aspect-ratio: 3 / 2; max-height: 380px; }
       .offers-head   { flex-direction: column; align-items: flex-start; }
       .offers-head h2 { font-size: 30px; }
       .highlight-split { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .home-hero { padding: 60px 0 50px; }
+      .hero-media { aspect-ratio: 3 / 2; max-height: 300px; }
     }
   </style>
 </head>
@@ -213,6 +220,7 @@
   <nav class="nav" aria-label="Hauptnavigation">
     <div class="wrap nav-inner">
       <a href="index.html" class="brand" aria-label="Startseite">
+        <img src="images/logo.png" alt="Die Kreativschmiede Logo" class="brand-logo" />
         <span>DIE KREATIVSCHMIEDE</span>
       </a>
       <div class="menu">
